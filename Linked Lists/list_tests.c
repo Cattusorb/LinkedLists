@@ -66,7 +66,7 @@ char* int_formatter(void* data) {
 	sprintf(buffer, "%d", *((int*) data));
 	return buffer;
 }
-/**
+
 // BASIC TESTS //
 void test_size_empty_list() {
 	LinkedList* list = create_list();
@@ -288,4 +288,4 @@ void all_list_tests() {
     access_tests();
     deletion_tests();
 }
-*/
+

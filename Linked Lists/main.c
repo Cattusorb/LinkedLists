@@ -53,5 +53,6 @@ int main()
     add_beginning(list, &j, sizeof(int));
     printf("%s\n", get_string(list, int_formatter));
 
+    all_list_tests();
     return 0;
 }

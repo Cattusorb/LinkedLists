@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572538970 source:m:\algorithms2019\linked lists\list_tests.c
+1572540706 source:m:\algorithms2019\linked lists\list_tests.c
 	"list_tests.h"
 
 1572367004 m:\algorithms2019\linked lists\list_tests.h
@@ -11,7 +11,7 @@
 	<stdio.h>
 	<stdbool.h>
 
-1572540086 source:m:\algorithms2019\linked lists\main.c
+1572540176 source:m:\algorithms2019\linked lists\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio.h>
@@ -19,6 +19,6 @@
 	"linked_list.h"
 	"list_tests.h"
 
-1572540098 source:m:\algorithms2019\linked lists\linked_lists.c
+1572540812 source:m:\algorithms2019\linked lists\linked_lists.c
 	"list_tests.h"
 

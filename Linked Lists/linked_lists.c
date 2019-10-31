@@ -78,7 +78,7 @@ char* get_string(const LinkedList* list, char* (*formatter) (void*))
 }
 
 // documentation here
-int list_size(const LinkedList*)
+int list_size(const LinkedList* list)
 {
     return 0;
 }
@@ -100,43 +100,43 @@ bool add_end(LinkedList* list, const void* data, const size_t data_size)
 }
 
 // documentation here
-bool add_n(LinkedList*, const int, const void*, const size_t)
+bool add_n(LinkedList* list, const int n, const void* data, const size_t data_size)
 {
     return false;
 }
 
 // documentation here
-bool remove_first(LinkedList*)
+bool remove_first(LinkedList* list)
 {
     return false;
 }
 
 // documentation here
-bool remove_last(LinkedList*)
+bool remove_last(LinkedList* list)
 {
     return false;
 }
 
 // documentation here
-bool remove_n(LinkedList*, const int)
+bool remove_n(LinkedList* list, const int n)
 {
     return false;
 }
 
 // documentation here
-void* get_first(const LinkedList*)
+void* get_first(const LinkedList* list)
 {
     return NULL;
 }
 
 // documentation here
-void* get_last(const LinkedList*)
+void* get_last(const LinkedList* list)
 {
     return NULL;
 }
 
 // documentation here
-void* get_n(const LinkedList*, const int)
+void* get_n(const LinkedList* list, const int n)
 {
     return NULL;
 }
