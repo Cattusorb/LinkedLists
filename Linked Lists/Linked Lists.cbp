@@ -33,11 +33,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="C:/Users/rap08060/Downloads/linked_list.h" />
-		<Unit filename="C:/Users/rap08060/Downloads/list_tests.h" />
+		<Unit filename="linked_list.h" />
 		<Unit filename="linked_lists.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="list_tests.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="list_tests.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

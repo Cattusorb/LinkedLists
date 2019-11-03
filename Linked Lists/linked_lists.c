@@ -77,13 +77,43 @@ char* get_string(const LinkedList* list, char* (*formatter) (void*))
     return buffer;
 }
 
-// documentation here
+/*
+ * Function list_size
+ * --------------------
+ * returns the number of elements in the list
+ * list: the linked list
+ */
 int list_size(const LinkedList* list)
 {
-    return 0;
+    int count = 1;
+    Node* current = list->first;
+
+    if (current == NULL)
+    {
+        return 0;
+    }
+
+    while (current != NULL)
+    {
+        current = current->next;
+        if(current != NULL)
+        {
+            count++;
+        }
+    }
+
+    return count;
 }
 
-// documentation here
+/*
+ * Function add_beginning
+ * --------------------
+ * returns true when the new node has been added
+ * to the beginning of the linked list
+ * list: the linked list
+ * data: data for node to hold
+ * data_size: size of data in bytes
+ */
 bool add_beginning(LinkedList* list, const void* data, const size_t data_size)
 {
     Node* new_node = create_node(data, data_size);
@@ -93,34 +123,150 @@ bool add_beginning(LinkedList* list, const void* data, const size_t data_size)
     return true;
 }
 
-// documentation here
+/*
+ * Function add_end
+ * --------------------
+ * returns true when the new node has been added
+ * to the end of the linked list
+ * list: the linked list
+ * data: data for node to hold
+ * data_size: size of data in bytes
+ */
 bool add_end(LinkedList* list, const void* data, const size_t data_size)
 {
-    return false;
+    Node* current = list->first;
+    while (current != NULL)
+    {
+        current = current->next;
+    }
+
+    Node* new_node = create_node(data, data_size);
+    current->next = new_node;
+
+    return true;
 }
 
-// documentation here
+/*
+ * Function add_n
+ * --------------------
+ * returns true when the new node has been added
+ * to the nth place of the linked list
+ * list: the linked list
+ * n: the index of the new node
+ * data: data for node to hold
+ * data_size: size of data in bytes
+ */
 bool add_n(LinkedList* list, const int n, const void* data, const size_t data_size)
 {
-    return false;
+    // if the size of the list is less than n
+    // then add the new element to the end of the list
+    if (list_size(list) < n)
+    {
+        add_end(list, data, data_size);
+        return true;
+    }
+
+    // if n is the first index in the list
+    // add beginning
+    if (n == 0)
+    {
+        add_beginning(list, data, data_size);
+        return true;
+    }
+
+    Node* current = list->first;
+    current = current->next;
+    int count = 1;
+
+    while (current != NULL && count != n - 1)
+    {
+        current = current->next;
+        count++;
+    }
+
+    Node* new_node = create_node(data, data_size);
+    Node* temp = current->next; // temp pointer to the current next node
+    current->next = new_node; // change the current next node pointer to the new node
+    new_node->next = temp; // set the new_node pointer to the temp pointer
+
+    return true;
 }
 
-// documentation here
+/*
+ * Function remove_first
+ * --------------------
+ * returns true after removing the first
+ * node in the list
+ * list: the linked list
+ */
 bool remove_first(LinkedList* list)
 {
-    return false;
+    // get the current first node
+    Node* current = list->first;
+    // set the first node to the current next node
+    list->first = current->next;
+    // destroy the first "current" node
+    destory(current);
+    return true;
 }
 
-// documentation here
+/*
+ * Function remove_last
+ * --------------------
+ * returns true after removing the last
+ * node in the list
+ * list: the linked list
+ */
 bool remove_last(LinkedList* list)
 {
-    return false;
+    Node* current = list->first;
+    int l_size = list_size(list);
+    int count = 0;
+    while (count < l_size - 1)
+    {
+        current = current->next;
+        count++;
+    }
+
+    destory(current->next);
+    current->next = NULL;
+    return true;
 }
 
 // documentation here
 bool remove_n(LinkedList* list, const int n)
 {
-    return false;
+    // if the size of the list is less than n
+    // then remove_last
+    if (list_size(list) < n)
+    {
+        remove_last(list);
+        return true;
+    }
+
+    // if n is the first index in the list
+    // remove_first
+    if (n == 0)
+    {
+        remove_first(list);
+        return true;
+    }
+
+    Node* current = list->first;
+    int count = 0;
+
+    while (current != NULL && count != n - 1)
+    {
+        current = current->next;
+        count++;
+    }
+
+    Node* destroy_this = current->next;
+    Node* temp = destroy_this->next;
+    current->next = temp;
+    destory(destroy_this);
+
+    return true;
 }
 
 // documentation here

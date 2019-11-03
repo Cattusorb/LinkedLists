@@ -22,3 +22,26 @@
 1572540812 source:m:\algorithms2019\linked lists\linked_lists.c
 	"list_tests.h"
 
+1572799823 source:c:\users\magic\desktop\college\fall 2019\algorithms & data structures\linked lists\list_tests.c
+	"list_tests.h"
+
+1572799823 c:\users\magic\desktop\college\fall 2019\algorithms & data structures\linked lists\list_tests.h
+	"linked_list.h"
+
+1572799823 c:\users\magic\desktop\college\fall 2019\algorithms & data structures\linked lists\linked_list.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<stdbool.h>
+
+1572803656 source:c:\users\magic\desktop\college\fall 2019\algorithms & data structures\linked lists\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+	"linked_list.h"
+	"list_tests.h"
+
+1572803403 source:c:\users\magic\desktop\college\fall 2019\algorithms & data structures\linked lists\linked_lists.c
+	"list_tests.h"
+

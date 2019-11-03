@@ -45,13 +45,22 @@ int main()
 
     LinkedList* list = create_list();
     char* s = get_string(list, int_formatter);
-    printf("%s\n", s);
+    int size_l = list_size(list);
+    printf("%s size: %d\n", s, size_l);
 
     int i = 5;
     int j = -3;
+    int k = 4;
+    int l = 0;
     add_beginning(list, &i, sizeof(int));
     add_beginning(list, &j, sizeof(int));
-    printf("%s\n", get_string(list, int_formatter));
+    add_end(list, &k, sizeof(int));
+    add_n(list, 0, &l, sizeof(int));
+    add_n(list, 7, &l, sizeof(int));
+
+    int size = list_size(list);
+
+    printf("%s size: %d\n", get_string(list, int_formatter), size);
 
     all_list_tests();
     return 0;
