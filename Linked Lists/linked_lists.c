@@ -178,7 +178,7 @@ bool add_n(LinkedList* list, const int n, const void* data, const size_t data_si
     current = current->next;
     int count = 1;
 
-    while (current != NULL && count != n - 1)
+    while (current != NULL || count != n - 1)
     {
         current = current->next;
         count++;
@@ -233,7 +233,14 @@ bool remove_last(LinkedList* list)
     return true;
 }
 
-// documentation here
+/*
+ * Function remove_n
+ * --------------------
+ * returns true after removing the nth
+ * node in the list
+ * list: the linked list
+ * n: the index of the node to remove
+ */
 bool remove_n(LinkedList* list, const int n)
 {
     // if the size of the list is less than n
@@ -255,7 +262,7 @@ bool remove_n(LinkedList* list, const int n)
     Node* current = list->first;
     int count = 0;
 
-    while (current != NULL && count != n - 1)
+    while (current != NULL || count != n - 1)
     {
         current = current->next;
         count++;
@@ -269,20 +276,69 @@ bool remove_n(LinkedList* list, const int n)
     return true;
 }
 
-// documentation here
+/*
+ * Function get_first
+ * --------------------
+ * returns the first
+ * node in the list
+ * list: the linked list
+ */
 void* get_first(const LinkedList* list)
 {
-    return NULL;
+    return list->first;
 }
 
-// documentation here
+/*
+ * Function get_last
+ * --------------------
+ * returns the last
+ * node in the list
+ * list: the linked list
+ */
 void* get_last(const LinkedList* list)
 {
-    return NULL;
+    Node* current = list->first;
+    int count = 0;
+    while (current != NULL)
+    {
+        current = current->next;
+        count++;
+    }
+    return current;
 }
 
-// documentation here
+/*
+ * Function remove_last
+ * --------------------
+ * returns the nth
+ * node in the list
+ * list: the linked list
+ * n: the node to retrieve
+ */
 void* get_n(const LinkedList* list, const int n)
 {
-    return NULL;
+    // if the size of the list is less than n
+    // then get the last
+    if (list_size(list) < n)
+    {
+        return get_last(list);
+    }
+
+    // if n is the first index in the list
+    // get_first
+    if (n == 0)
+    {
+        return get_first(list);
+    }
+
+    Node* current = list->first;
+    int count = 0;
+
+    while (current != NULL || count != n)
+    {
+        current = current->next;
+        count++;
+    }
+
+    return current;
 }

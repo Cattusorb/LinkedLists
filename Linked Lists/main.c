@@ -54,9 +54,13 @@ int main()
     int l = 0;
     add_beginning(list, &i, sizeof(int));
     add_beginning(list, &j, sizeof(int));
-    add_end(list, &k, sizeof(int));
-    add_n(list, 0, &l, sizeof(int));
-    add_n(list, 7, &l, sizeof(int));
+    //add_end(list, &k, sizeof(int));
+    //add_n(list, 0, &l, sizeof(int));
+    //add_n(list, 7, &l, sizeof(int));
+    Node* node1 = get_n(list, 1);
+    Node* node2 = get_n(list, 2);
+    Node* node0 = get_n(list, 0);
+    printf("node0: %d node1: %d node2: %d \n", node0->data, node1->data, node2->data);
 
     int size = list_size(list);
 
