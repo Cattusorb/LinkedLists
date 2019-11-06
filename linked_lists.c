@@ -337,7 +337,7 @@ void* get_first(const LinkedList* list)
 {
     if (list == NULL)
     {
-        return NULL;
+        return 0;
     }
     Node* node = list->first;
     return node->data;
@@ -354,7 +354,7 @@ void* get_last(const LinkedList* list)
 {
     if (list == NULL)
     {
-        return NULL;
+        return 0;
     }
     Node* current = list->first;
     Node* previous = NULL;
@@ -379,7 +379,7 @@ void* get_n(const LinkedList* list, const int n)
 {
     if (list == NULL)
     {
-        return NULL;
+        return 0;
     }
     // if the size of the list is less than n
     // then get the last
