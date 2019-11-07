@@ -191,18 +191,16 @@ bool add_n(LinkedList* list, const int n, const void* data, const size_t data_si
     }
     // if the size of the list is less than n
     // then add the new element to the end of the list
-    if (list_size(list) < n)
+    if (list_size(list) <= n)
     {
-        add_end(list, data, data_size);
-        return true;
+        return false;
     }
 
     // if the list size if 0
     // create the first node in the list
-    if (list_size(list) == 0)
+    if (list_size(list) <= 0)
     {
-        list->first = create_node(data, data_size);
-        return true;
+        return false;
     }
     // if n is the first index in the list
     // or less than 0
